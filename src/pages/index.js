@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
+import SubscribeForm from '../components/subscribe-form'
 import styles from './index.module.css'
 
 class RootIndex extends React.Component {
@@ -22,9 +23,8 @@ class RootIndex extends React.Component {
           </p>
           <p>You can add your email so I can send you updates as well.</p>
           <p>Thank you and Stay Safe</p>
-          <form>
-            <input type="text" />
-          </form>
+          <hr />
+          <SubscribeForm />
         </div>
       </div>
     )
