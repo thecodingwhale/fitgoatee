@@ -1,6 +1,11 @@
 .box {
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
+  height: 100vh;
   padding-left: 15px;
   padding-right: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column;
 }

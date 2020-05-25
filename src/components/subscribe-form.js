@@ -11,8 +11,7 @@ const SubscribeFormSchema = yup.object().shape({
 })
 
 const postSubscribe = async ({ firstName, lastName, emailAddress }) => {
-  const url =
-    'https://5ktxoztqqa.execute-api.us-east-2.amazonaws.com/fitgoatee/send-email'
+  const url = process.env.API_URL + '/fitgoatee/send-email'
   const payload = {
     payload: {
       firstName,
@@ -54,12 +53,12 @@ const SubscribeForm = () => {
     setError(false)
     await sleep(500)
     try {
-      setSubmitting(false)
       const response = await postSubscribe({
         firstName,
         lastName,
         emailAddress,
       })
+      setSubmitting(false)
       if (response.statusCode === 200) {
         setSuccess(true)
         reset({
@@ -116,7 +115,7 @@ const SubscribeForm = () => {
             })}
             id="grid-first-name"
             type="text"
-            placeholder="Juan"
+            placeholder="Antonio"
             name="firstName"
             ref={register({
               required: true,
@@ -149,7 +148,7 @@ const SubscribeForm = () => {
             })}
             id="grid-last-name"
             type="text"
-            placeholder="Dela Cruz"
+            placeholder="Luna"
             name="lastName"
             ref={register({ required: true })}
           />
@@ -193,16 +192,24 @@ const SubscribeForm = () => {
           )}
         </div>
       </div>
-      <button
-        disabled={submitting}
-        type="submit"
+      <div
         className={classnames({
-          'bg-blue-500 text-white font-bold py-2 px-4 rounded': true,
-          'opacity-50 cursor-not-allowed': submitting,
+          'flex flex-wrap -mx-3 mb-2': true,
         })}
       >
-        {submitting ? 'Subscribing...' : 'Subscribe'}
-      </button>
+        <div className="w-full px-3 mb-6 md:mb-0">
+          <button
+            disabled={submitting}
+            type="submit"
+            className={classnames({
+              'bg-blue-500 text-white font-bold py-2 px-4 rounded': true,
+              'opacity-50 cursor-not-allowed': submitting,
+            })}
+          >
+            {submitting ? 'Subscribing...' : 'Subscribe'}
+          </button>
+        </div>
+      </div>
     </form>
   )
 }
