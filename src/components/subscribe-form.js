@@ -11,7 +11,8 @@ const SubscribeFormSchema = yup.object().shape({
 })
 
 const postSubscribe = async ({ firstName, lastName, emailAddress }) => {
-  const url = process.env.API_URL + '/fitgoatee/send-email'
+  const url =
+    'https://5ktxoztqqa.execute-api.us-east-2.amazonaws.com/fitgoatee/send-email'
   const payload = {
     payload: {
       firstName,
