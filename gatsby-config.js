@@ -38,5 +38,11 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-G-N9LSHTDRY2',
+      },
+    },
   ],
 }
