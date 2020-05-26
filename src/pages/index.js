@@ -25,7 +25,7 @@ class RootIndex extends React.Component {
           <meta name="description" content={metaDescription} />
         </Helmet>
         <div className={styles.box}>
-          <hi className="mb-6">
+          <hi className="mb-6 hidden">
             <img src={logo} />
             <span className="hidden">Fitgoatee</span>
           </hi>
