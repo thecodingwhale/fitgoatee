@@ -54,23 +54,17 @@ class RootIndex extends React.Component {
                 href="https://www.facebook.com/fitgoatee"
                 target="_blank"
                 rel="noopener norefferer"
-                className="mr-2 inline-block"
+                className="mr-2 inline-block text-gray-600 text-3xl"
               >
-                <FontAwesomeIcon
-                  className="text-gray-600 text-3xl"
-                  icon={faFacebook}
-                />
+                <FontAwesomeIcon icon={faFacebook} />
               </a>
               <a
                 href="https://www.youtube.com/channel/UCfbpA1zY3eFl-5u4PUJSqRg"
                 target="_blank"
                 rel="noopener norefferer"
-                className="inline-block"
+                className="inline-block text-gray-600 text-3xl"
               >
-                <FontAwesomeIcon
-                  className="text-gray-600 text-3xl"
-                  icon={faYoutube}
-                />
+                <FontAwesomeIcon icon={faYoutube} />
               </a>
             </div>
           </div>
