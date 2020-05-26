@@ -17,7 +17,7 @@ config.autoAddCss = false
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const metaDescription = `My main goal is to help those beginners who want to lose weight by helping them where to start by sharing and categorizing all my personal experiences in this platform.`
+    const metaDescription = `My main goal is to help those who want to lose weight by guiding them where to start, categorize and share all my personal experiences in this journey.`
     return (
       <div>
         <Helmet>
