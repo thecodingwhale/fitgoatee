@@ -35,8 +35,12 @@ class RootIndex extends React.Component {
                 Hello! I'm Aldren Terante.
               </p>
               <p className="font-bold text-lg mb-5">{metaDescription}</p>
-              <p className="text-gray-600">
-                This website is still in progress to help you better!
+              <p className="text-gray-600 mb-2">
+                This website is still in progress to help you better! If you
+                have some questions email me at{' '}
+                <a className="text-blue-600" href="fitgoatee@gmail.com">
+                  <strong>fitgoatee@gmail.com</strong>
+                </a>
               </p>
               <p className="text-xs text-gray-600">
                 You can add your email so I can send you updates as well. Thank
