@@ -5,11 +5,13 @@ import { Helmet } from 'react-helmet'
 import SubscribeForm from '../components/subscribe-form'
 import styles from './index.module.css'
 import logo from '../assets/images/fitgoatee.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const metaDescription = `Welcome to my site, I am here to help you lose your weight by sharing my personal experience and together let's work out our road to wellness.`
+    const metaDescription = `My main goal is to help those beginners who want to lose weight by helping them where to start by sharing and categorizing all my personal experiences in this platform.`
     return (
       <div>
         <Helmet>
@@ -36,10 +38,33 @@ class RootIndex extends React.Component {
               </p>
             </div>
             <hr className="mb-6" />
-            <div className="rounded overflow-hidden shadow-lg bg-white">
+            <div className="rounded overflow-hidden shadow-lg bg-white mb-5">
               <div className="px-6 py-4">
                 <SubscribeForm />
               </div>
+            </div>
+            <div>
+              <a
+                href="https://www.facebook.com/fitgoatee"
+                target="_blank"
+                rel="noopener norefferer"
+                className="mr-2"
+              >
+                <FontAwesomeIcon
+                  className="text-gray-600 text-3xl"
+                  icon={faFacebook}
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCfbpA1zY3eFl-5u4PUJSqRg"
+                target="_blank"
+                rel="noopener norefferer"
+              >
+                <FontAwesomeIcon
+                  className="text-gray-600 text-3xl"
+                  icon={faYoutube}
+                />
+              </a>
             </div>
           </div>
         </div>

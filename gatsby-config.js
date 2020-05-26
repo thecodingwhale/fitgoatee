@@ -25,7 +25,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'FitGoatee - road to wellness',
+    title: 'FitGoatee - Road to Wellness',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
