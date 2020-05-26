@@ -1,6 +1,6 @@
 .box {
   max-width: 500px;
-  margin: 120px auto 0px;
+  margin: 0 auto;
   height: 100vh;
   padding-left: 15px;
   padding-right: 15px;
@@ -8,4 +8,10 @@
   align-items: flex-start;
   justify-content: center;
   flex-flow: column;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    margin: 120px auto 0px;
+  }
 }
