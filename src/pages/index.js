@@ -8,6 +8,12 @@ import logo from '../assets/images/fitgoatee.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
+// This ensures that the icon CSS is loaded immediately before attempting to render icons
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+// Prevent fontawesome from dynamically adding its css since we did it manually above
+config.autoAddCss = false
+
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -48,7 +54,7 @@ class RootIndex extends React.Component {
                 href="https://www.facebook.com/fitgoatee"
                 target="_blank"
                 rel="noopener norefferer"
-                className="mr-2"
+                className="mr-2 inline-block"
               >
                 <FontAwesomeIcon
                   className="text-gray-600 text-3xl"
@@ -59,6 +65,7 @@ class RootIndex extends React.Component {
                 href="https://www.youtube.com/channel/UCfbpA1zY3eFl-5u4PUJSqRg"
                 target="_blank"
                 rel="noopener norefferer"
+                className="inline-block"
               >
                 <FontAwesomeIcon
                   className="text-gray-600 text-3xl"
