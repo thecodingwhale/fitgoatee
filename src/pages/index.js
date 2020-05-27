@@ -4,7 +4,7 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import SubscribeForm from '../components/subscribe-form'
 import styles from './index.module.css'
-import logo from '../assets/images/fitgoatee.svg'
+import Logo from '../assets/images/fitgoatee.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
@@ -25,10 +25,10 @@ class RootIndex extends React.Component {
           <meta name="description" content={metaDescription} />
         </Helmet>
         <div className={styles.box}>
-          <hi className="mb-6 hidden">
-            <img src={logo} />
+          <h1 className="mb-6">
+            <Logo />
             <span className="hidden">Fitgoatee</span>
-          </hi>
+          </h1>
           <div>
             <div className="mb-6">
               <p className="font-bold text-2xl mb-5">

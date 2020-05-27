@@ -44,5 +44,13 @@ module.exports = {
         trackingId: 'UA-G-N9LSHTDRY2',
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
   ],
 }
