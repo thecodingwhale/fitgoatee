@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import classnames from 'classnames'
