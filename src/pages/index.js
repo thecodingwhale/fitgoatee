@@ -17,6 +17,7 @@ config.autoAddCss = false
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const apiUrl = get(this, 'props.data.env.apiUrl')
     const metaDescription = `My main goal is to help those who want to lose weight by guiding them where to start, categorize and share all my personal experiences in this journey.`
     return (
       <div>
@@ -50,6 +51,7 @@ class RootIndex extends React.Component {
             <hr className="mb-6" />
             <div className="rounded overflow-hidden shadow-lg bg-white mb-5">
               <div className="px-6 py-4">
+                <div className="hidden">{apiUrl}</div>
                 <SubscribeForm />
               </div>
             </div>
@@ -82,6 +84,9 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
+    env {
+      apiUrl
+    }
     site {
       siteMetadata {
         title

@@ -24,6 +24,9 @@ if (!spaceId || !accessToken) {
 }
 
 module.exports = {
+  env: {
+    apiUrl: process.env.API_URL,
+  },
   siteMetadata: {
     title: 'FitGoatee - Road to Wellness',
   },
