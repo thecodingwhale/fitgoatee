@@ -78,6 +78,11 @@ const SubscribeForm = () => {
 
   return (
     <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
+      <div className="hidden">
+        <div>{process.env.CONTENTFUL_SPACE_ID}</div>
+        <div>{process.env.CONTENTFUL_ACCESS_TOKEN}</div>
+        <div>{process.env.API_URL}</div>
+      </div>
       {success && (
         <div
           className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6"
