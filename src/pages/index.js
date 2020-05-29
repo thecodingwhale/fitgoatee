@@ -16,15 +16,17 @@ config.autoAddCss = false
 
 class RootIndex extends React.Component {
   render() {
-    console.log('process.env.API_URL: ', process.env.API_URL)
-    console.log(
-      'process.env.CONTENTFUL_SPACE_ID: ',
-      process.env.CONTENTFUL_SPACE_ID
-    )
-    console.log(
-      'process.env.CONTENTFUL_ACCESS_TOKEN: ',
-      process.env.CONTENTFUL_ACCESS_TOKEN
-    )
+    const {
+      NETLIFY_DEV,
+      API_URL,
+      CONTENTFUL_SPACE_ID,
+      CONTENTFUL_ACCESS_TOKEN,
+    } = process.env
+
+    console.log('NETLIFY_DEV: ', NETLIFY_DEV)
+    console.log('API_URL: ', API_URL)
+    console.log('CONTENTFUL_SPACE_ID: ', CONTENTFUL_SPACE_ID)
+    console.log('CONTENTFUL_ACCESS_TOKEN: ', CONTENTFUL_ACCESS_TOKEN)
 
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const apiUrl = get(this, 'props.data.env.apiUrl')
