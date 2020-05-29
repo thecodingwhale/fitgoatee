@@ -1,0 +1,4 @@
+[build.environment]
+  CONTENTFUL_SPACE_ID = "yijgp8m6utee"
+  CONTENTFUL_ACCESS_TOKEN = "3Td_W0mglcqxggaRMdNxaGreJYLcUHDeQIr1J0weUxo"
+  API_URL = "https://5ktxoztqqa.execute-api.us-east-2.amazonaws.com"
