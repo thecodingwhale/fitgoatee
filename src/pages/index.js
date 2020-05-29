@@ -16,6 +16,16 @@ config.autoAddCss = false
 
 class RootIndex extends React.Component {
   render() {
+    console.log('process.env.API_URL: ', process.env.API_URL)
+    console.log(
+      'process.env.CONTENTFUL_SPACE_ID: ',
+      process.env.CONTENTFUL_SPACE_ID
+    )
+    console.log(
+      'process.env.CONTENTFUL_ACCESS_TOKEN: ',
+      process.env.CONTENTFUL_ACCESS_TOKEN
+    )
+
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const apiUrl = get(this, 'props.data.env.apiUrl')
     const metaDescription = `My main goal is to help those who want to lose weight by guiding them where to start, categorize and share all my personal experiences in this journey.`
@@ -84,9 +94,6 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    env {
-      apiUrl
-    }
     site {
       siteMetadata {
         title

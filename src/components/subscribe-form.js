@@ -1,12 +1,7 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import classnames from 'classnames'
 import * as yup from 'yup'
-import axios from 'axios'
 
 const SubscribeFormSchema = yup.object().shape({
   firstName: yup.string().required(),
@@ -82,11 +77,6 @@ const SubscribeForm = () => {
 
   return (
     <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
-      <div className="hidden">
-        <div>{process.env.CONTENTFUL_SPACE_ID}</div>
-        <div>{process.env.CONTENTFUL_ACCESS_TOKEN}</div>
-        <div>{process.env.API_URL}</div>
-      </div>
       {success && (
         <div
           className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6"
