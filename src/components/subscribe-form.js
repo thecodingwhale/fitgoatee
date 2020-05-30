@@ -2,42 +2,13 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import classnames from 'classnames'
 import * as yup from 'yup'
+import { postSubscribe } from '../utils/api'
 
 const SubscribeFormSchema = yup.object().shape({
   firstName: yup.string().required(),
   lastName: yup.string().required(),
   emailAddress: yup.string().email().required(),
 })
-
-const postSubscribe = async ({ firstName, lastName, emailAddress }) => {
-  const url =
-    'https://5ktxoztqqa.execute-api.us-east-2.amazonaws.com/fitgoatee/send-email'
-  const payload = {
-    payload: {
-      firstName,
-      lastName,
-      emailAddress,
-    },
-  }
-  const response = await fetch(url, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, cors, *same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'omit', // include, *same-origin, omit
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    redirect: 'follow', // manual, *folslow, error
-    referrer: 'client', // no-referrer, *client
-    body: JSON.stringify(payload), // body data type must match "Content-Type" header
-  })
-  const json = await response.json().then(response)
-  return json
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
 
 const SubscribeForm = () => {
   const [submitting, setSubmitting] = useState(false)
@@ -51,13 +22,13 @@ const SubscribeForm = () => {
     setSubmitting(true)
     setSuccess(false)
     setError(false)
-    await sleep(500)
     try {
       const response = await postSubscribe({
         firstName,
         lastName,
         emailAddress,
       })
+      console.log(response.response)
       setSubmitting(false)
       if (response.statusCode === 200) {
         setSuccess(true)
@@ -67,9 +38,11 @@ const SubscribeForm = () => {
           emailAddress: '',
         })
       } else {
+        console.log(response)
         setError(response.body)
       }
     } catch (error) {
+      console.log(error)
       setSubmitting(false)
       setError('Something when wrong.')
     }
