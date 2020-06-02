@@ -1,7 +1,7 @@
 import { API_URL } from './constants'
 
 const postSubscribe = async ({ firstName, lastName, emailAddress }) => {
-  const url = `${API_URL}/fitgoatee/send-email`
+  const url = `${API_URL}/send-email`
   const payload = {
     payload: {
       firstName,

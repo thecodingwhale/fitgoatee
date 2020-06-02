@@ -16,18 +16,6 @@ config.autoAddCss = false
 
 class RootIndex extends React.Component {
   render() {
-    const {
-      NETLIFY_DEV,
-      API_URL,
-      CONTENTFUL_SPACE_ID,
-      CONTENTFUL_ACCESS_TOKEN,
-    } = process.env
-
-    console.log('NETLIFY_DEV: ', NETLIFY_DEV)
-    console.log('API_URL: ', API_URL)
-    console.log('CONTENTFUL_SPACE_ID: ', CONTENTFUL_SPACE_ID)
-    console.log('CONTENTFUL_ACCESS_TOKEN: ', CONTENTFUL_ACCESS_TOKEN)
-
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const apiUrl = get(this, 'props.data.env.apiUrl')
     const metaDescription = `My main goal is to help those who want to lose weight by guiding them where to start, categorize and share all my personal experiences in this journey.`
