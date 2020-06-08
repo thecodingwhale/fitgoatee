@@ -7,6 +7,7 @@ import styles from './index.module.css'
 import Logo from '../assets/images/fitgoatee.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import Navbar from '../components/navbar'
 
 // This ensures that the icon CSS is loaded immediately before attempting to render icons
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -25,6 +26,7 @@ class RootIndex extends React.Component {
           <title>{siteTitle}</title>
           <meta name="description" content={metaDescription} />
         </Helmet>
+        <Navbar />
         <div className={styles.box}>
           <h1 className="mb-6">
             <Logo />
