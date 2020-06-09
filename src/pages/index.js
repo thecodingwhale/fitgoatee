@@ -20,14 +20,51 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const apiUrl = get(this, 'props.data.env.apiUrl')
     const metaDescription = `My main goal is to help those who want to lose weight by guiding them where to start, categorize and share all my personal experiences in this journey.`
+    const elements = ['one', 'two', 'three', 'four']
     return (
-      <div>
+      <div className="antialiased">
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={metaDescription} />
         </Helmet>
         <Navbar />
-        <div className={styles.box}>
+        <div className="container mx-auto px-4">
+          <h2>Recipes</h2>
+          <p className="mb-4">
+            My everyday home cooked meals for my weight loss
+          </p>
+          <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+            {elements.map((value, index) => {
+              return (
+                <div key={index}>
+                  <div className="relative pb-5/6">
+                    <img
+                      className="absolute h-full w-full object-cover rounded-lg shadow-md"
+                      src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                      alt="Rear view of modern home with pool"
+                    />
+                  </div>
+                  <div className="relative px-4 -mt-16">
+                    <div className="bg-white p-4 rounded-lg shadow-lg">
+                      <div className="flex items-baseline">
+                        <div className="text-gray-600 text-xs uppercase font-semibold tracking-wide">
+                          Day 01
+                        </div>
+                      </div>
+                      <h4 className="mt-1 font-semibold text-sm lg:text-md leading-tight truncate">
+                        Modern home in city center Modern home in city center
+                      </h4>
+                      <div className="mt-1 text-xs truncate">
+                        This is a short description of the meal
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+        {/* <div className={styles.box}>
           <h1 className="mb-6">
             <Logo />
             <span className="hidden">Fitgoatee</span>
@@ -76,7 +113,7 @@ class RootIndex extends React.Component {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   }
