@@ -5,7 +5,7 @@ import Logo from '../assets/images/fitgoatee.svg'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="bg-gray-900 mb-4">
+    <header className="bg-gray-900">
       <div className="container mx-auto sm:px-4 sm:py-3 sm:flex sm:justify-between sm:items-center">
         <div className="flex items-center justify-between px-4 py-3 sm:p-0">
           <div>
