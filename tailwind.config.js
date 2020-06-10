@@ -2,6 +2,12 @@ module.exports = {
   purge: false,
   theme: {
     extend: {
+      inset: {
+        '-16': '-4rem',
+      },
+      margin: {
+        '-52': '-13rem',
+      },
       spacing: {
         '1/2': '50%',
         '1/3': '33.333333%',

@@ -3,9 +3,8 @@ import Navbar from '../components/navbar'
 
 const Template = ({ children }) => {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
-
       {children}
     </div>
   )
