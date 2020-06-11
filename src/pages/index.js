@@ -6,12 +6,7 @@ import SubscribeForm from '../components/subscribe-form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Template from '../components/template'
-
-// This ensures that the icon CSS is loaded immediately before attempting to render icons
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { config } from '@fortawesome/fontawesome-svg-core'
-// Prevent fontawesome from dynamically adding its css since we did it manually above
-config.autoAddCss = false
+import RecipeCard from '../components/recipe-card'
 
 class RootIndex extends React.Component {
   render() {
@@ -21,46 +16,33 @@ class RootIndex extends React.Component {
     const elements = ['one', 'two', 'three', 'four']
 
     return (
-      <div className="antialiased">
+      <div>
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={metaDescription} />
         </Helmet>
         <Template>
-          <div className="container mx-auto px-4 mb-6">
-            <h2>Recipes</h2>
-            <p className="mb-4">
+          <div className="container mx-auto px-4 mt-4 mb-6">
+            <h2 className=" text-gray-900 text-xl sm:text-2xl">Recipes</h2>
+            <p className="mb-4 text-gray-700 text-md">
               My everyday home cooked meals for my weight loss
             </p>
-            <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
               {elements.map((value, index) => {
                 return (
                   <div key={index}>
-                    <div className="relative pb-5/6">
-                      <img
-                        className="absolute h-full w-full object-cover rounded-lg shadow-md"
-                        src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Rear view of modern home with pool"
-                      />
-                    </div>
-                    <div className="relative px-4 -mt-16">
-                      <div className="bg-white p-4 rounded-lg shadow-lg">
-                        <div className="flex items-baseline">
-                          <div className="text-gray-600 text-xs uppercase font-semibold tracking-wide">
-                            Day 01
-                          </div>
-                        </div>
-                        <h4 className="mt-1 font-semibold text-sm lg:text-md leading-tight truncate">
-                          Modern home in city center Modern home in city center
-                        </h4>
-                        <div className="mt-1 text-xs truncate">
-                          This is a short description of the meal
-                        </div>
-                      </div>
-                    </div>
+                    <RecipeCard />
                   </div>
                 )
               })}
+            </div>
+            <div className="text-right">
+              <a
+                href="#"
+                className="bg-transparent hover:bg-blue-500 text-xs text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              >
+                View All
+              </a>
             </div>
           </div>
         </Template>
