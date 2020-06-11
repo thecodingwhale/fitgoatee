@@ -2,11 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
-import SubscribeForm from '../components/subscribe-form'
+import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Template from '../components/template'
 import RecipeCard from '../components/recipe-card'
+import SubscribeForm from '../components/subscribe-form'
 
 class RootIndex extends React.Component {
   render() {
@@ -31,18 +32,20 @@ class RootIndex extends React.Component {
               {elements.map((value, index) => {
                 return (
                   <div key={index}>
-                    <RecipeCard />
+                    <Link to="/recipe">
+                      <RecipeCard />
+                    </Link>
                   </div>
                 )
               })}
             </div>
             <div className="text-right">
-              <a
-                href="#"
+              <Link
+                to="/recipes"
                 className="bg-transparent hover:bg-blue-500 text-xs text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               >
                 View All
-              </a>
+              </Link>
             </div>
           </div>
         </Template>

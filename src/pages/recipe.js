@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Template from '../components/template'
+import RecipeCard from '../components/recipe-card'
 
 const Recipe = () => {
+  const elements = ['one', 'two', 'three', 'four']
   return (
     <Template>
       <div className="relative pb-4/6 sm:pb-4/12 mb-6">
@@ -94,6 +97,22 @@ const Recipe = () => {
               Refrigerates well for a few days.
             </p>
           </div>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 mb-6">
+        <h2 className="mt-2 text-gray-900 text-xl sm:mt-4 sm:text-2xl mb-4">
+          You might also like
+        </h2>
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
+          {elements.map((value, index) => {
+            return (
+              <div key={index}>
+                <Link to="/recipe">
+                  <RecipeCard />
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
     </Template>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'gatsby'
 import classnames from 'classnames'
 import Logo from '../assets/images/fitgoatee.svg'
 
@@ -8,9 +9,9 @@ const Navbar = () => {
     <header className="bg-gray-900">
       <div className="container mx-auto sm:px-4 sm:py-3 sm:flex sm:justify-between sm:items-center">
         <div className="flex items-center justify-between px-4 py-3 sm:p-0">
-          <div>
+          <Link to="/">
             <Logo className="h-8 w-20" />
-          </div>
+          </Link>
           <div className="sm:hidden">
             <button
               onClick={() => {
@@ -45,12 +46,12 @@ const Navbar = () => {
             hidden: !isOpen,
           })}
         >
-          <a
-            href="#"
+          <Link
+            to="/recipes"
             className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
           >
             Recipes
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

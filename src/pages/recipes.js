@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Template from '../components/template'
 import RecipeCard from '../components/recipe-card'
 
@@ -26,11 +27,13 @@ const Recipes = () => {
         <p className="mb-4 text-gray-700 text-md">
           My everyday home cooked meals for my weight loss
         </p>
-        <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {elements.map((value, index) => {
             return (
               <div key={index}>
-                <RecipeCard />
+                <Link to="/recipe">
+                  <RecipeCard />
+                </Link>
               </div>
             )
           })}
