@@ -28,7 +28,7 @@ class RootIndex extends React.Component {
             <p className="mb-4 text-gray-700 text-md">
               My everyday home cooked meals for my weight loss
             </p>
-            <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
+            <div className="grid gap-4 grid-cols-2 sm:gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
               {elements.map((value, index) => {
                 return (
                   <div key={index}>
@@ -42,7 +42,7 @@ class RootIndex extends React.Component {
             <div className="text-right">
               <Link
                 to="/recipes"
-                className="bg-transparent hover:bg-blue-500 text-xs text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                className="bg-transparent hover:bg-orange-500 text-xs text-orange-700 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"
               >
                 View All
               </Link>

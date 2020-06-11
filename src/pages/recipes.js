@@ -27,7 +27,7 @@ const Recipes = () => {
         <p className="mb-4 text-gray-700 text-md">
           My everyday home cooked meals for my weight loss
         </p>
-        <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {elements.map((value, index) => {
             return (
               <div key={index}>

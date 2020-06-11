@@ -100,10 +100,10 @@ const Recipe = () => {
         </div>
       </div>
       <div className="container mx-auto px-4 mb-6">
-        <h2 className="mt-2 text-gray-900 text-xl sm:mt-4 sm:text-2xl mb-4">
+        <h2 className="mt-2 text-gray-900 font-semibold text-xl sm:mt-4 sm:text-2xl mb-4">
           You might also like
         </h2>
-        <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div className="grid gap-4 grid-cols-2 sm:gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
           {elements.map((value, index) => {
             return (
               <div key={index}>
