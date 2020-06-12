@@ -11,11 +11,10 @@ import SubscribeForm from '../components/subscribe-form'
 
 class RootIndex extends React.Component {
   render() {
+    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const apiUrl = get(this, 'props.data.env.apiUrl')
     const metaDescription = `My main goal is to help those who want to lose weight by guiding them where to start, categorize and share all my personal experiences in this journey.`
-    const elements = ['one', 'two', 'three', 'four']
-
     return (
       <div>
         <Helmet>
@@ -29,11 +28,11 @@ class RootIndex extends React.Component {
               My everyday home cooked meals for my weight loss
             </p>
             <div className="grid gap-4 grid-cols-2 sm:gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mb-8">
-              {elements.map((value, index) => {
+              {posts.map((post, index) => {
                 return (
                   <div key={index}>
                     <Link to="/recipe">
-                      <RecipeCard />
+                      <RecipeCard {...post.node} />
                     </Link>
                   </div>
                 )
@@ -104,6 +103,29 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulBlogPost(
+      sort: { fields: [publishDate], order: DESC }
+      limit: 4
+    ) {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
+          heroImage {
+            title
+            description
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+        }
       }
     }
   }
