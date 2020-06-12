@@ -7,25 +7,25 @@ import RecipeCard from '../components/recipe-card'
 
 class Recipe extends React.Component {
   render() {
+    const post = get(this.props, 'data.contentfulBlogPost')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    console.log('post: ', post)
     return (
       <Template>
         <div className="relative pb-4/6 sm:pb-4/12 mb-6">
           <img
             className="absolute h-full w-full object-cover shadow-md"
-            src="https://i.dietdoctor.com/wp-content/uploads/2020/03/keto-vanilla-slice-h.jpg?auto=compress"
-            alt="Rear view of modern home with pool"
+            src={post.heroImage.fluid.src}
+            alt={post.heroImage.description}
           />
         </div>
         <div className="container mx-auto px-4 mb-6">
           <div className="sm:absolute sm:top-0 sm:mt-24 sm:bg-black sm:bg-opacity-25 sm:max-w-md sm:rounded-lg sm:px-4 sm:py-4 md:px-6 md:py-6">
             <h1 className="text-gray-900 text-2xl font-semibold mb-2 sm:text-white sm:mb-0 md:text-2xl md:text-4xl">
-              Low-carb vanilla slice
+              {post.title}
             </h1>
             <p className="text-gray-800 leading-relaxed mb-4 sm:text-white sm:mb-0 md:text-lg">
-              You won’t find an Australian bakery that doesn’t have vanilla
-              slice in the cabinet. Enjoy this divinely creamy classic treat
-              with zero guilt.
+              {post.description.description}
             </p>
           </div>
           <div className="sm:flex">
@@ -126,7 +126,24 @@ class Recipe extends React.Component {
 export default Recipe
 
 export const pageQuery = graphql`
-  query RecipeQuery {
+  query RecipePostBySlug($slug: String!) {
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      description {
+        description
+      }
+      publishDate(formatString: "MMMM Do, YYYY")
+      heroImage {
+        fluid(maxWidth: 1180, background: "rgb:000000") {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
+      }
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
     allContentfulBlogPost(
       sort: { fields: [publishDate], order: DESC }
       limit: 4
