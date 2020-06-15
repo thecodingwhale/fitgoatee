@@ -31,9 +31,7 @@ class RootIndex extends React.Component {
               {posts.map((post, index) => {
                 return (
                   <div key={index}>
-                    <Link to="/recipe">
-                      <RecipeCard {...post.node} />
-                    </Link>
+                    <RecipeCard {...post.node} />
                   </div>
                 )
               })}

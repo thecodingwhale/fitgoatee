@@ -20,7 +20,7 @@ class Recipe extends React.Component {
           />
         </div>
         <div className="container mx-auto px-4 mb-6">
-          <div className="sm:absolute sm:top-0 sm:mt-24 sm:bg-black sm:bg-opacity-25 sm:max-w-md sm:rounded-lg sm:px-4 sm:py-4 md:px-6 md:py-6">
+          <div className="sm:absolute sm:top-0 sm:mt-24 sm:bg-black sm:bg-opacity-50 sm:max-w-md sm:rounded-lg sm:px-4 sm:py-4 md:px-6 md:py-6">
             <h1 className="text-gray-900 text-2xl font-semibold mb-2 sm:text-white sm:mb-0 md:text-2xl md:text-4xl">
               {post.title}
             </h1>
@@ -110,9 +110,7 @@ class Recipe extends React.Component {
             {posts.map((post, index) => {
               return (
                 <div key={index}>
-                  <Link to="/recipe">
-                    <RecipeCard {...post.node} />
-                  </Link>
+                  <RecipeCard {...post.node} />
                 </div>
               )
             })}
