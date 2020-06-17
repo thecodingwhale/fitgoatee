@@ -1,5 +1,8 @@
 @tailwind base;
 @tailwind components;
+
+@import '../templates/recipe-post.css';
+
 @tailwind utilities;
 
 @font-face {

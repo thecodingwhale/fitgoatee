@@ -1,0 +1,93 @@
+.recipe-cover {
+  @apply relative pb-4/6 mb-6;
+}
+@screen sm {
+  .recipe-cover {
+    @apply pb-4/12;
+  }
+}
+.recipe-image {
+  @apply absolute h-full w-full object-cover shadow-md;
+}
+
+@screen sm {
+  .recipe-lead-container {
+    @apply absolute top-0 mt-24 bg-black bg-opacity-50 max-w-md rounded-lg px-4 py-4;
+  }
+}
+@screen md {
+  .recipe-lead-container {
+    @apply px-6 py-6;
+  }
+}
+.recipe-lead-title {
+  @apply text-gray-900 text-2xl font-semibold mb-2;
+}
+@screen sm {
+  .recipe-lead-title {
+    @apply text-white mb-0;
+  }
+}
+@screen md {
+  .recipe-lead-title {
+    @apply text-2xl text-4xl;
+  }
+}
+
+.recipe-lead-description {
+  @apply text-gray-800 leading-relaxed mb-4;
+}
+@screen sm {
+  .recipe-lead-description {
+    @apply text-white mb-0;
+  }
+}
+@screen md {
+  .recipe-lead-description {
+    @apply text-lg;
+  }
+}
+
+.recipe-content h2 {
+  @apply text-gray-900 text-xl font-semibold mb-2;
+}
+.recipe-content ul li,
+.recipe-content ol li {
+  @apply mb-2;
+}
+.recipe-content ul {
+  @apply list-disc list-inside text-gray-800 leading-relaxed mb-4;
+}
+.recipe-content ol {
+  @apply list-decimal list-inside text-gray-800 leading-relaxed mb-4;
+}
+.recipe-content p {
+  @apply text-gray-800 leading-relaxed mb-2;
+}
+@screen sm {
+  .recipe-content {
+    @apply flex;
+  }
+  .recipe-sidebar {
+    @apply w-2/5;
+  }
+  .recipe-body {
+    @apply w-3/5;
+  }
+  .recipe-content ul {
+    @apply text-xs;
+  }
+}
+@screen md {
+  .recipe-content h2 {
+    @apply text-2xl;
+  }
+  .recipe-content ul {
+    @apply text-sm;
+  }
+}
+@screen lg {
+  .recipe-content ul {
+    @apply text-base;
+  }
+}
